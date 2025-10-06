@@ -1,0 +1,12 @@
+{
+  "extends": "@404-software/eslint-config",
+  "parserOptions": {
+    "tsconfigRootDir": "/Users/zahidallaulddin/Documents/reboot/reboot-checkpoints"
+  },
+  "rules": {
+    "@typescript-eslint/no-unnecessary-type-assertion": "off",
+    "@typescript-eslint/no-empty-object-type": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
+    "@typescript-eslint/restrict-template-expressions": "off"
+  }
+}
