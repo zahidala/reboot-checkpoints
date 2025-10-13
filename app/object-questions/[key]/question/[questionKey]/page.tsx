@@ -6,6 +6,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
+import Link from "next/link";
 
 export default function ObjectQuestion({ params }: { params: Promise<{ key: string; questionKey: string; }> }) {
   const { key, questionKey } = use(params);
@@ -36,6 +37,15 @@ export default function ObjectQuestion({ params }: { params: Promise<{ key: stri
  
   return (
     <div className="prose max-w-none p-4">
+      <Link 
+        href={`https://github.com/01-edu/rust-tests/blob/master/solutions/${question.name}`} 
+        className="text-blue-500 hover:underline"
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        Solution
+      </Link>
+      
       <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeHighlight]}>{markdown}</ReactMarkdown>
     </div>
   );
