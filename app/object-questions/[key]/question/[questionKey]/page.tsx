@@ -37,6 +37,7 @@ export default function ObjectQuestion({ params }: { params: Promise<{ key: stri
  
   return (
     <div className="prose max-w-none p-4">
+      <div className="flex gap-2 items-center mb-4">
       <Link 
         href={`https://github.com/01-edu/rust-tests/blob/master/solutions/${question.name}`} 
         className="text-blue-500 hover:underline"
@@ -44,8 +45,18 @@ export default function ObjectQuestion({ params }: { params: Promise<{ key: stri
         rel="noopener noreferrer"
       >
         Solution
-      </Link>
+      </Link> 
       
+      <Link 
+        href={`https://github.com/01-edu/rust-tests/blob/master/tests//${question.name}_test`} 
+        className="text-blue-500 hover:underline"
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        Test Cases
+      </Link>
+      </div>
+
       <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeHighlight]}>{markdown}</ReactMarkdown>
     </div>
   );
