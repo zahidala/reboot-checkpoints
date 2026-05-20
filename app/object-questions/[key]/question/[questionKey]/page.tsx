@@ -22,8 +22,6 @@ export default function ObjectQuestion({ params }: { params: Promise<{ key: stri
 
   useEffect(() => {
     if (!question) return;
-    // Backup original URL
-    // fetch(`https://corsproxy.io/?https://learn.reboot01.com/${question.attrs.subject}`)
 
     fetch(`https://raw.githubusercontent.com/01-edu/public/refs/heads/master/subjects/${question.name}/README.md`)
       .then((res) => res.text())
